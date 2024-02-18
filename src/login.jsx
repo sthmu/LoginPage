@@ -9,9 +9,8 @@ export default function Login() {
     const [password,setPassword] = useState("");
 
     const submit=(event)=>{
-        event.preventDefalut();
-        console.log("username:"+username);
-        console.log("password:"+password);
+        event.preventDefault();
+        alert("username:"+username+"\n password:"+password);
     }
 
 
@@ -20,20 +19,20 @@ export default function Login() {
       <div className="row w-100 ">
         <div className="col col-lg-6 col-sm-12  ">
           <p>
-            <i class="bi bi-amd h1"></i>
+            <i className="bi bi-amd h1"></i>
           </p>
           <p>
-            <i class="bi bi-amd h1"></i>
+            <i className="bi bi-amd h1"></i>
           </p>
           <p>
-            <i class="bi bi-amd h1"></i>
+            <i className="bi bi-amd h1"></i>
           </p>
           <p>
-            <i class="bi bi-amd h1"></i>
+            <i className="bi bi-amd h1"></i>
           </p>
         </div>
         <div className="col col-lg-6 col-md-12 ">
-          <form action={submit} className="border p-5 shadow p-3 mb-5 bg-white rounded">
+          <form onSubmit={submit} className="border p-5 shadow p-3 mb-5 bg-white rounded">
             <h1 className="h3 mb-3 fw-normal">Please sign in</h1>
 
             <div className="form-floating mb-3">
@@ -45,7 +44,7 @@ export default function Login() {
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
               />
-              <label for="floatingInput">Email address</label>
+              <label htmlFor="floatingInput">Email address</label>
             </div>
             <div className="form-floating">
               <input
@@ -56,7 +55,7 @@ export default function Login() {
                 value={password}
                 onChange={(p)=> setPassword(p.target.value)}
               />
-              <label for="floatingPassword">Password</label>
+              <label htmlFor="floatingPassword">Password</label>
             </div>
 
             <div className="form-check text-start my-3">
@@ -66,7 +65,7 @@ export default function Login() {
                 value="remember-me"
                 id="flexCheckDefault"
               />
-              <label className="form-check-label" for="flexCheckDefault">
+              <label className="form-check-label" htmlFor="flexCheckDefault">
                 Remember me
               </label>
             </div>
