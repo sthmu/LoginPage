@@ -5,7 +5,7 @@ import { useState } from "react";
 
 export default function Login() {
 
-    const [username,setName] = useState("");
+    const [username,setUsername] = useState("");
     const [password,setPassword] = useState("");
 
     const submit=(event)=>{
@@ -43,7 +43,7 @@ export default function Login() {
                 id="floatingInput"
                 placeholder="name@example.com"
                 value={username}
-                onChange={(e) => setName(e.target.value)}
+                onChange={(e) => setUsername(e.target.value)}
               />
               <label for="floatingInput">Email address</label>
             </div>
